@@ -22,7 +22,7 @@ pipeline {
     stage('Terraform Plan') {
         steps {
           sh "cd /var/lib/jenkins/workspace/Infra/"
-          sh "terraform plan -out=tfplan -input=false -var-file='dev.tfvars'"
+          sh "terraform plan -out=tfplan -input=false"
       }
     }
     stage('Terraform Apply') {
