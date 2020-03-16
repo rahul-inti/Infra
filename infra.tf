@@ -57,10 +57,12 @@ resource "aws_eip" "nat" {
 resource "aws_nat_gateway" "gw" {
   allocation_id = "${aws_eip.nat.id}"
   subnet_id     = "${element(aws_subnet.Publicsubnet.*.id, count.index)}"
-  
-  tags {
-    Name = "gw NAT"
-  }
+
+  depends_on = ["aws_internet_gateway.igw"]
+
+  #tags {
+    #Name = "gw NAT"
+  #}
 }
 
 resource "aws_route_table" "public" {
