@@ -30,7 +30,7 @@ prerequisites() {
 prerequisites
 
 install_terraform() {
-  rm -rf /usr/local/bin/terraform
+  
   if [ -e "$INSTALL_DIR_TERRAFORM" ]; then
 
    echo "Terraform already installed +++++"
