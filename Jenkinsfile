@@ -12,14 +12,12 @@ pipeline {
             }
         }
 
-        stage('Terraform plan') {
-          steps {
-            sh "cd /var/lib/jenkins/workspace/Infra/"
-            sh "pwd"
-            sh "terraform plan"
-
-         }
-      }
+    stage('Terraform Init') {
+        steps {
+          sh "cd //var/lib/jenkins/workspace/Infra/"
+          sh "terraform init -input=false"
+       }
     }
 
+  }
 }
