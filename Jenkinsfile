@@ -16,7 +16,7 @@ pipeline {
           steps {
             sh "cd /var/lib/jenkins/workspace/Infra/"
             sh "pwd"
-            sh "sh terraform plan"
+            sh "terraform plan"
 
          }
       }
