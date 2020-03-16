@@ -15,6 +15,7 @@ pipeline {
         stage('Terraform plan') {
           steps {
             sh "cd /var/lib/jenkins/workspace/Infra/"
+            sh "pwd"
             sh "sh terraform plan"
 
          }
