@@ -6,7 +6,7 @@ pipeline {
               checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/rahul-inti/Infra.git']]])
             }
         }
-        stage('Terraform plan') {
+        stage('Go') {
             steps {
               sh "sh installterraform.sh"
             }
