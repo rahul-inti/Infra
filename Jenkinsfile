@@ -11,5 +11,13 @@ pipeline {
               sh "sh installterraform.sh"
             }
         }
+
+        stage('Terraform plan') {
+          steps {
+            sh "sh terraform plan"
+
+         }
+      }
     }
+
 }
