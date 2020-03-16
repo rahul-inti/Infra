@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Terraform plan') {
             steps {
-              sh "sh installterraform"
+              sh "sh installterraform.sh"
             }
         }
     }
