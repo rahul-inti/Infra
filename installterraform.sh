@@ -1,5 +1,5 @@
 #! /bin/bash
-readonly TERRAFORM_VERSION="0.9.6"
+readonly TERRAFORM_VERSION="0.12.23"
 readonly INSTALL_DIR="/usr/local/bin"
 readonly INSTALL_DIR_TERRAFORM="/usr/local/bin/terraform"
 readonly DOWNLOAD_DIR="/tmp"
@@ -16,21 +16,21 @@ prerequisites() {
      echo "Hey Curl already there"
    else
      echo "i am on the way to install curl"
-     sudo apt-get install curl
+    apt-het -y install curl
   fi
-
    if [ -e "$unzip_cmd" ]; then
      echo "Hey Uzip already there"
    else
      echo "i am on the way to install uzip"
-     sudo ape-get install curl
+     sudo apt-get update -y
+     sudo apt-get install unzip -y
   fi
 
 }
 prerequisites
 
 install_terraform() {
-  
+
   if [ -e "$INSTALL_DIR_TERRAFORM" ]; then
 
    echo "Terraform already installed +++++"
@@ -39,13 +39,16 @@ else
    echo "Going to install"
    echo ""
    echo "Downloading Terraform zip'd binary"
-    curl -O "$DOWNLOADED_FILE" "$DOWNLOAD_URL"
+  cd /tmp
+  pwd
+  curl -O "https://releases.hashicorp.com/terraform/0.9.6/terraform_0.9.6_linux_amd64.zip"
 
    echo ""
    echo "Extracting Terraform executable"
-    unzip "$DOWNLOADED_FILE" -d "$INSTALL_DIR"
+   unzip terraform_0.9.6_linux_amd64.zip
+   sudo mv terraform /usr/local/bin/
 
-  rm "$DOWNLOADED_FILE"
+#  rm "$DOWNLOADED_FILE"
 
   fi
 }
