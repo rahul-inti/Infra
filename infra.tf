@@ -1,6 +1,6 @@
 provider "aws" {
   region = "${var.region}"
-  access_key = "$accesskey	"
+  access_key = "$accesskey"
   secret_key = "$Secret"
 }
 
