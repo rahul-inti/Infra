@@ -21,6 +21,8 @@ pipeline {
 
     stage('Terraform Plan') {
         steps {
+          sh "export AWS_ACCESS_KEY_ID=AKIAI7D6NB6RHKHNCY2A"
+          sh "export AWS_SECRET_ACCESS_KEY=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" 
           sh "cd /var/lib/jenkins/workspace/Infra/"
           sh "terraform plan -out=tfplan -input=false"
       }
