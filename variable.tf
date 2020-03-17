@@ -3,6 +3,15 @@ variable "region" {
   default     = "us-east-1"
 }
 
+variable "access" {
+  type = string
+}
+
+variable "secret" {
+  type = string
+}
+
+
 variable "cidr_block" {
   description = "This for vpc cide block"
   default     = "10.0.0.0/16"
