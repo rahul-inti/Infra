@@ -15,8 +15,9 @@ pipeline {
     stage('Terraform Init') {
         steps {
              bash '''#!/bin/bash
-             cd /var/lib/jenkins/workspace/Infra/
-  }           '''
-  }
+                      cd /var/lib/jenkins/workspace/Infra/
+             '''
+      }
+    }
+   }
  }
-}
