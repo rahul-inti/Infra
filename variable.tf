@@ -4,11 +4,11 @@ variable "region" {
 }
 
 variable "access" {
-  type = string
+  type = "string"
 }
 
 variable "secret" {
-  type = string
+  type = "string"
 }
 
 
