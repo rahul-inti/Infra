@@ -28,7 +28,7 @@ pipeline {
     stage('Terraform Apply') {
         steps {
           input 'Apply Plan'
-          sh "cd /var/lib/jenkins/workspace/Infra/"
+          #sh "cd /var/lib/jenkins/workspace/Infra/"
           sh "terraform $stack -input=false tfplan"
       }
     }
