@@ -30,9 +30,9 @@ pipeline {
               }  else {
                    echo "run below"
                    terraform plan -destroy -out=tfdestroy
-        }                                
+        }
       }
     }
-
   }
+}
 }
