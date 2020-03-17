@@ -16,7 +16,8 @@ pipeline {
         steps {
              bash '''#!/bin/bash
              cd /var/lib/jenkins/workspace/Infra/
-             
+             '''
+
 
   }
 }
