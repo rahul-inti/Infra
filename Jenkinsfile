@@ -28,7 +28,16 @@ pipeline {
     stage('Terraform Apply') {
         steps {
           input 'Apply Plan'
-          sh "terraform $stack -input=false tfplan"
+             bash '''#!/bin/bash
+                      test = $stack
+                      if  [ test = apply ]; then
+                       echo "Going to do apply the chnages"
+                       terraform $stack -input=false tfplan
+
+                       else
+                        echo "Destory the stack"
+                        terraform $stack -input=false tfplan
+            '''                  
       }
     }
   }
