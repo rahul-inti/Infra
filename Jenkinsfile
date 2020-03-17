@@ -29,7 +29,8 @@ pipeline {
                    input 'Apply Plan'
               }  else {
                    echo "run below"
-          }         terraform plan -destroy -out=tfdestroy                       
+                   terraform plan -destroy -out=tfdestroy
+        }                                
       }
     }
 
