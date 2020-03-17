@@ -1,7 +1,8 @@
 provider "aws" {
   region = "${var.region}"
-  access_key = "${var.access}"
-  secret_key = "${var.secret}"
+  assume_role {
+    role_arn = "arn:aws:iam::141570103273:user/inti"
+  }
 }
 
 resource "aws_vpc" "prod" {
