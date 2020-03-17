@@ -1,7 +1,7 @@
 provider "aws" {
   region = "${var.region}"
-  access_key = "$Cred"
-  secret_key = "$Cred"
+  access_key = "$accesskey	"
+  secret_key = "$Secret"
 }
 
 resource "aws_vpc" "prod" {
