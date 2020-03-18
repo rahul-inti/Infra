@@ -23,13 +23,13 @@ pipeline {
         steps {
             script {
                 if ($stack == apply) {
-                   echo :run below commands
+                   echo "run below commands"
                    sh "cd /var/lib/jenkins/workspace/Infra/"
                    sh "terraform plan -out=tfplan -input=false"
                    input 'Apply Plan'
               }  else {
                    echo "run below"
-                   terraform plan -destroy -out=tfdestroy
+                    terraform plan -destroy -out=tfdestroy
         }
       }
     }
