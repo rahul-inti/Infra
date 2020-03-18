@@ -27,9 +27,6 @@ pipeline {
                    sh "cd /var/lib/jenkins/workspace/Infra/"
                    sh "terraform plan -out=tfplan -input=false"
                    input 'Apply Plan'
-              }  else {
-                   echo "run below"
-                    terraform plan -destroy -out=tfdestroy
         }
       }
     }
