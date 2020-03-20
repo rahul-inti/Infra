@@ -14,7 +14,7 @@ resource "aws_subnet" "Publicsubnet" {
   count             = 3
   vpc_id            = "${aws_vpc.prod.id}"
   availability_zone = "${element(data.aws_availability_zones.azs.names,count.index)}"
-  cidr_block        = "${cidrsubnet(var.cidr_block,8,count.index)}"
+  cidr_block        = "${cidrsubnet(var.cidr_block,8,count.index + 1}"
 
   tags {
     Name = "public-${count.index + 0}"
@@ -25,7 +25,7 @@ resource "aws_subnet" "Privatesubnet" {
   count             = 3
   vpc_id            = "${aws_vpc.prod.id}"
   availability_zone = "${element(data.aws_availability_zones.azs.names,count.index)}"
-  cidr_block        = "${cidrsubnet(var.cidr_block,8,count.index + 3)}"
+  cidr_block        = "${cidrsubnet(var.cidr_block,8,count.index + 4)}"
 
   tags {
     Name  = "Private-${count.index + 0}"
