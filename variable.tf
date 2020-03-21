@@ -44,5 +44,8 @@ variable "ec2" {
     us-east-1 = "t2.micro"
     us-west-2 = "t2.micro"
 }
+}
+
+
 # Declare the data source
 data "aws_availability_zones" "azs" {}
