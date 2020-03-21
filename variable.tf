@@ -28,5 +28,14 @@ variable "hostnames" {
   default = "true"
 }
 
+variable "images" {
+  type = "map"
+
+  default = {
+    us-east-1 = "ami-07ebfd5b3428b6f4d"
+    us-west-2 = "ami-0fc025e3171c5a1bf"
+  }
+}
+
 # Declare the data source
 data "aws_availability_zones" "azs" {}
