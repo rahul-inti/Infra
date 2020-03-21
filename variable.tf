@@ -37,5 +37,16 @@ variable "images" {
   }
 }
 
+variable "ec2" {
+  type = "map"
+
+  default = {
+    us-east-1 = "t2.micro"
+    us-west-2 = "t2.micro"
+  }
+
+}
+
+
 # Declare the data source
 data "aws_availability_zones" "azs" {}
