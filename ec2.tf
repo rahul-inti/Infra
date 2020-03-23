@@ -1,4 +1,4 @@
 resource "aws_instance" "dominose" {
-  ami           = "${map(var.images)}"
-  instance_type = "${map(var.ec2)}"
+  ami           = "${lookup(var.images,var.region)}"
+  instance_type = "${lookup(var.ec2)}"
 }
